@@ -40,12 +40,12 @@ const Home = () => {
                     {groceries.map((grocery) => (
                         <tr key={grocery.id}>
                             <td><Link to={`/groceries/${grocery.id}`}>{grocery.item_name}</Link></td>
-                            <td>${grocery.amount.toFixed(2)}</td>
+                            <td>${typeof grocery.amount === 'number' ? grocery.amount.toFixed(2) : 'N/A'}</td>
                         </tr>
                     ))}
                     <tr>
                         <td>Total Cost:</td>
-                        <td style={{ color: color }}>${groceryTotal}</td>
+                        <td style={{ color: color }}>${typeof groceryTotal === 'number' ? groceryTotal.toFixed(2) : 'N/A'}</td>
                     </tr>
                 </tbody>
             </table>
