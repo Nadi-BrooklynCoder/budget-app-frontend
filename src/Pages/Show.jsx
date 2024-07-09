@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 
-const Show = () => {
+const Show = ({ onDelete }) => {
     const [grocery, setGrocery] = useState(null);
     const { id } = useParams();
     const navigate = useNavigate();
@@ -11,8 +11,10 @@ const Show = () => {
         fetch(`${API}/${id}`, {
             method: "DELETE"
         })
-            .then(res => res.json())
-            .then(navigate('/groceries'))
+            .then(() => {
+                onDelete(id);
+                navigate('/groceries');
+            })
             .catch(err => console.err(err))
     }
 

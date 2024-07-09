@@ -1,22 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
-    const [groceries, setGroceries] = useState([]);
-    const [groceryTotal, setGroceryTotal] = useState(0);
-    const [refresh, setRefresh] = useState(false);
-    const API = import.meta.env.VITE_BASE_URL;
-
-    useEffect(() => {
-        fetch(API)
-            .then(res => res.json())
-            .then(res => {
-                setGroceries(res);
-                const totalCost = res.reduce((total, grocery) => total + grocery.amount, 0);
-                setGroceryTotal(parseFloat(totalCost));
-            })
-            .catch(err => console.err(err));
-    }, [API, refresh]);
+const Home = ({ groceries }) => {
+    const groceryTotal = groceries.reduce((total, grocery) => total + grocery.amount, 0);
 
     let color;
     if (groceryTotal > 100) {
@@ -55,6 +41,7 @@ const Home = () => {
 }
 
 export default Home;
+
 
 
 
