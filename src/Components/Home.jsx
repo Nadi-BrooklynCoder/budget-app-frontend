@@ -43,7 +43,7 @@ const Home = () => {
                             <td><Link to={`/groceries/${grocery.id}`}>{grocery.item_name}</Link></td>
                             <td>${typeof grocery.amount === 'number' ? grocery.amount.toFixed(2) : 'Not valid'}</td>
                         </tr>
-                    ))}
+                    ) : null))}
                     <tr>
                         <td>Total Cost:</td>
                         <td style={{ color: color }}>${typeof groceryTotal === 'number' ? groceryTotal.toFixed(2) : 'Not valid'}</td>
