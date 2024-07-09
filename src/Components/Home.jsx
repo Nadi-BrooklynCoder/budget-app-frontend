@@ -38,14 +38,15 @@ const Home = () => {
                 </thead>
                 <tbody>
                     {groceries.map((grocery) => (
+                        typeof grocery.amount === 'number' ? (
                         <tr key={grocery.id}>
                             <td><Link to={`/groceries/${grocery.id}`}>{grocery.item_name}</Link></td>
-                            <td>${typeof grocery.amount === 'number' ? grocery.amount.toFixed(2) : 'N/A'}</td>
+                            <td>${typeof grocery.amount === 'number' ? grocery.amount.toFixed(2) : 'Not valid'}</td>
                         </tr>
                     ))}
                     <tr>
                         <td>Total Cost:</td>
-                        <td style={{ color: color }}>${typeof groceryTotal === 'number' ? groceryTotal.toFixed(2) : 'N/A'}</td>
+                        <td style={{ color: color }}>${typeof groceryTotal === 'number' ? groceryTotal.toFixed(2) : 'Not valid'}</td>
                     </tr>
                 </tbody>
             </table>
