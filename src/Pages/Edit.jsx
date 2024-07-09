@@ -93,7 +93,7 @@ const Edit = () => {
                     onChange={handleChange}
                 />
                 <br />
-                <input type="submit" value="Add Item" />
+                <input type="submit" value="Update Item" />
             </fieldset>
         </form>
         </div>
