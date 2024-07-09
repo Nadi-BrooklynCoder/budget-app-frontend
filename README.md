@@ -4,11 +4,16 @@ This is the frontend for the Budget App, a full-stack grocery list budget app bu
 
 ## Setup Instructions
 
-1. Clone this repository to your local machine using `git clone <repository-url>`.
-2. Navigate to the project directory using `cd <project-directory>`.
+1. Clone this repository to your local machine using `git clone url`.
+2. Navigate to the project directory using `cd project`.
 3. Install the necessary dependencies using `npm install`.
 4. Start the server using `npm run dev`.
-5. Open your browser and navigate to `http://localhost:3000` to view the app.
+5. Open your browser and navigate to `http://localhost:4002` to view the app.
+
+## Links
+
+- **Frontend**: The frontend is deployed on Netlify and can be accessed at the following URL: https://grocery-budget-app.netlify.app/groceries
+- **Backend**: The backend is hosted on Render and can be accessed at the following URL: https://grocery-budget-app-backend.onrender.com/. The backend code is available on GitHub at the following URL: https://github.com/Nadi-BrooklynCoder/budget-app-backend
 
 ## Environment Variables
 
