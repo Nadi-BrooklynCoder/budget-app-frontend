@@ -20,10 +20,10 @@ const Show = () => {
         fetch(`${API}/${id}`)
             .then(res => res.json())
             .then(res => {
-                setGrocery(res)
+                setGrocery(res);
             })
-            .catch(err => console.err(err))
-    },[])
+            .catch(err => console.err(err));
+    },[]);
 
     return (
         <div>

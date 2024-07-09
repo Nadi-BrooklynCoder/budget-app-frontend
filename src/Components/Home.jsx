@@ -13,12 +13,11 @@ const Home = () => {
             .then(res => {
                 setGroceries(res);
                 const totalCost = res.reduce((total, grocery) => total + grocery.amount, 0);
-                setGroceryTotal(parseFloat(totalCost))
+                setGroceryTotal(parseFloat(totalCost));
             })
-            .catch(err => console.err(err))
-    }, [API, refresh])
+            .catch(err => console.err(err));
+    }, [API, refresh]);
 
-    // Determine the color based on the total cost
     let color;
     if (groceryTotal > 100) {
         color = 'green';

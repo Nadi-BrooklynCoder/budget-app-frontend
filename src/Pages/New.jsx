@@ -37,8 +37,8 @@ const New = ( { newItem }) => {
                 newItem();
             })
             
-            .catch(err => console.log(err))
-    }
+            .catch(err => console.log(err));
+    };
 
     return (
         <form onSubmit={handleSubmit}>

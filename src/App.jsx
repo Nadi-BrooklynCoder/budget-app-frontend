@@ -13,7 +13,7 @@ function App() {
   const [refresh, setRefresh] = useState(false);
 
   const handleNewItem = () => {
-    setRefresh(prev => !prev)
+    setRefresh(prev => !prev);
   }
 
   return (

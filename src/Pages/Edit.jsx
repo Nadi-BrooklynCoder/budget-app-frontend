@@ -19,10 +19,10 @@ const Edit = () => {
         fetch(`${API}/${id}`)
             .then(res => res.json())
             .then(res => {
-                setGrocery(() => res)
+                setGrocery(() => res);
             })
             
-            .catch(err => console.err(err))
+            .catch(err => console.err(err));
     }, [id]);
 
     const handleChange = (e) => {
@@ -45,7 +45,7 @@ const Edit = () => {
             .then(res => {
                 setTimeout (() => navigate(`/groceries/${res.id}`), 1000)
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
     }
 
     if(!grocery) return <div>Loading...</div>

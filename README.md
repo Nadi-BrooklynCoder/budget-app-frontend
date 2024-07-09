@@ -24,6 +24,3 @@ This project uses the following environment variables:
 ## Scripts
 
 - `dev`: Starts the development server.
-- `build`: Builds the app for production.
-- `lint`: Lints the codebase.
-- `preview`: Previews the production build.
