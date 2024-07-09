@@ -18,19 +18,43 @@ const Home = () => {
             .catch(err => console.err(err))
     }, [API, refresh])
 
+    // Determine the color based on the total cost
+    let color;
+    if (groceryTotal > 100) {
+        color = 'green';
+    } else if (groceryTotal >= 0) {
+        color = 'orange';
+    } else {
+        color = 'green';
+    }
+
     return (
         <div>
-            { groceries.map((grocery) => {
-                return (
-                    <div key={grocery.id}>
-                        <Link to={`/groceries/${grocery.id}`}>{grocery.item_name}</Link>
-                    </div>
-                )
-            })}
-            <h2>Total Cost: ${groceryTotal.toFixed(2)}</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {groceries.map((grocery) => (
+                        <tr key={grocery.id}>
+                            <td><Link to={`/groceries/${grocery.id}`}>{grocery.item_name}</Link></td>
+                            <td>${grocery.amount.toFixed(2)}</td>
+                        </tr>
+                    ))}
+                    <tr>
+                        <td>Total Cost:</td>
+                        <td style={{ color: color }}>${groceryTotal.toFixed(2)}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     )
 }
 
 export default Home;
+
+
 

@@ -1,0 +1,148 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0 0 10px;
+    background: linear-gradient(to right, #008000, #ADFF2f);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.navGrocery a {
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+    transition: color 0.3s ease;
+}
+
+.navGrocery a:hover {
+    color: white;
+}
+
+ul li{
+    list-style-type: none;
+    transition-duration: 0.4s;
+}
+
+ul li a {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    margin-right: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 25px; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ul li a:hover {
+    background-color: white;
+    color: black;
+}
+
+table {
+    width: 75%;
+    border-collapse: collapse;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+legend {
+    font-size: 24px;
+}
+
+fieldset {
+    border: none;
+}
+
+input[type="text"], input[type="number"], input[type="date"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid #4CAF50;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    opacity: 0.8;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.grocery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-color: #f4f4f4;
+    padding: 20px;
+    width: 50%;
+}
+
+.grocery a {
+    text-decoration: none;
+}
+
+.grocery h2, .grocery h4, .grocery h5 {
+    margin: 10px 0;
+}
+
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border: none;
+    cursor: pointer;
+    width: 25%;
+    border-radius: 25px; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+    list-style-type: none;
+}
+
+button:hover {
+    background-color: white;
+    color: black;
+}
+
