@@ -41,7 +41,7 @@ const Home = () => {
                         typeof grocery.amount === 'number' ? (
                         <tr key={grocery.id}>
                             <td><Link to={`/groceries/${grocery.id}`}>{grocery.item_name}</Link></td>
-                            <td>${typeof grocery.amount === 'number' ? grocery.amount.toFixed(2) : 'Not valid'}</td>
+                            <td>{grocery.amount.toFixed(2)}</td>
                         </tr>
                     ) : null))}
                     <tr>
