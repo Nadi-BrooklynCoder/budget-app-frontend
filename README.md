@@ -12,8 +12,8 @@ This is the frontend for the Budget App, a full-stack grocery list budget app bu
 
 ## Links
 
-- **Frontend**: The frontend is deployed on Netlify and can be accessed at the following URL: https://grocery-budget-app.netlify.app.
-- **Backend**: The backend is hosted on Render and can be accessed at the following URL: https://grocery-budget-app.onrender.com/groceries. The backend code is available on GitHub at the following URL: https://github.com/Nadi-BrooklynCoder/budget-app-backend.
+- **Frontend**: The frontend is deployed on Netlify and can be accessed at the following [frontend](https://grocery-budget-app.netlify.app).
+- **Backend**: The backend is hosted on Render and can be accessed at the following [backend] (https://grocery-budget-app.onrender.com/groceries). The backend code is available on GitHub at the following [backend](https://github.com/Nadi-BrooklynCoder/budget-app-backend).
 
 ## Environment Variables
 
