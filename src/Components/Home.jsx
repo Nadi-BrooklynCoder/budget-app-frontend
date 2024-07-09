@@ -45,7 +45,7 @@ const Home = () => {
                     ))}
                     <tr>
                         <td>Total Cost:</td>
-                        <td style={{ color: color }}>${groceryTotal.toFixed(2)}</td>
+                        <td style={{ color: color }}>${groceryTotal}</td>
                     </tr>
                 </tbody>
             </table>
