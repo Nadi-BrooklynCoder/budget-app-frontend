@@ -1,3 +1,4 @@
+// app.jsx
 import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import NavBar from './Components/NavBar';
@@ -13,8 +14,7 @@ const App = () => {
 
   const handleAdd = (newGrocery) => {
     setGroceries([...groceries, newGrocery]);
-};
-
+  };
 
   useEffect(() => {
     fetch(API)
@@ -33,17 +33,18 @@ const App = () => {
 
   return (
     <div>
-            <NavBar />
-            <Routes>
-                <Route path="/" element={<Navigate to="/groceries" replace/>} />
-                <Route path="/groceries" element={<Home groceries={groceries}  />} />
-                <Route path="/groceries/new" element={<New onAdd={handleAdd} />} />
-                <Route path="/groceries/:id" element={<Show onUpdate={handleUpdate} onDelete={handleDelete} />} />
-                <Route path="groceries/:id/edit" element={<Edit />} />
-            </Routes>
-        </div>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Navigate to="/groceries" replace/>} />
+        <Route path="/groceries" element={<Home groceries={groceries}  />} />
+        <Route path="/groceries/new" element={<New onAdd={handleAdd} />} />
+        <Route path="/groceries/:id" element={<Show handleUpdate={handleUpdate} onDelete={handleDelete} />} />
+        <Route path="groceries/:id/edit" element={<Edit handleUpdate={handleUpdate} />} />
+      </Routes>
+    </div>
   );
 };
 
 export default App;
+
 

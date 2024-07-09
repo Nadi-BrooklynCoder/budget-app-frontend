@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
-const Edit = () => {
+const Edit = ({ handleUpdate }) => {
     const API = import.meta.env.VITE_BASE_URL;
     const[ grocery, setGrocery ] = useState({
         id: uuidv4(),
@@ -42,8 +42,9 @@ const Edit = () => {
             }
         })
             .then(res => res.json())
-            .then(res => {
-                setTimeout (() => navigate(`/groceries/${res.id}`), 1000)
+            .then(updatedGrocery => {
+                handleUpdate(updatedGrocery);
+                setTimeout (() => navigate(`/groceries/${updatedGrocery.id}`), 1000)
             })
             .catch(err => console.log(err));
     }

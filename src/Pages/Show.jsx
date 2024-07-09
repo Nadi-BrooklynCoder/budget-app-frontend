@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 
-const Show = ({ onDelete }) => {
+const Show = ({ handleUpdate, onDelete }) => {
     const [grocery, setGrocery] = useState(null);
     const { id } = useParams();
     const navigate = useNavigate();
@@ -47,3 +47,5 @@ const Show = ({ onDelete }) => {
 }
 
 export default Show;
+
+
