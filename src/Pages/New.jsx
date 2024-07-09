@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid'
 
-const New = ( { newItem }) => {
+const New = ( { onAdd }) => {
     const navigate = useNavigate();
     const [newGrocery, setNewGrocery] = useState({
         id: uuidv4(),
@@ -33,8 +33,8 @@ const New = ( { newItem }) => {
         })
             .then(res => res.json())
             .then(res => {
+                onAdd(res);
                 setTimeout (() => navigate(`/groceries/${res.id}`), 1000);
-                newItem();
             })
             
             .catch(err => console.log(err));

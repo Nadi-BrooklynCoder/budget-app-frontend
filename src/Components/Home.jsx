@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Home = ({ groceries }) => {
-    const groceryTotal = groceries.reduce((total, grocery) => total + grocery.amount, 0);
+    const groceryTotal = groceries.reduce((total, grocery) => total + (typeof grocery.amount === 'number' ? grocery.amount : 0), 0);
+
 
     let color;
     if (groceryTotal > 100) {

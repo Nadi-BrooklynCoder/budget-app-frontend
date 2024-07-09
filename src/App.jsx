@@ -7,38 +7,43 @@ import New from './Pages/New';
 import Edit from './Pages/Edit';
 import './App.css';
 
-function App() {
-    const [groceries, setGroceries] = useState([]);
-    const API = import.meta.env.VITE_BASE_URL;
+const App = () => {
+  const [groceries, setGroceries] = useState([]);
+  const API = import.meta.env.VITE_BASE_URL;
 
-    useEffect(() => {
-        fetch(API)
-            .then(res => res.json())
-            .then(res => setGroceries(res))
-            .catch(err => console.err(err));
-    }, []);
+  const handleAdd = (newGrocery) => {
+    setGroceries([...groceries, newGrocery]);
+};
 
-    const handleDelete = (id) => {
-        fetch(`${API}/${id}`, {
-            method: "DELETE"
-        })
-            .then(() => setGroceries(groceries.filter(grocery => grocery.id !== id)))
-            .catch(err => console.err(err));
-    }
 
-    return (
-        <div>
+  useEffect(() => {
+    fetch(API)
+      .then(res => res.json())
+      .then(data => setGroceries(data))
+      .catch(err => console.error(err));
+  }, []);
+
+  const handleUpdate = (updatedGrocery) => {
+    setGroceries(groceries.map(grocery => grocery.id === updatedGrocery.id ? updatedGrocery : grocery));
+  };
+
+  const handleDelete = (id) => {
+    setGroceries(groceries.filter(grocery => grocery.id !== id));
+  };
+
+  return (
+    <div>
             <NavBar />
             <Routes>
                 <Route path="/" element={<Navigate to="/groceries" replace/>} />
-                <Route path="/groceries" element={<Home groceries={groceries} />} />
-                <Route path="/groceries/new" element={<New />} />
-                <Route path="/groceries/:id" element={<Show onDelete={handleDelete} />} />
+                <Route path="/groceries" element={<Home groceries={groceries}  />} />
+                <Route path="/groceries/new" element={<New onAdd={handleAdd} />} />
+                <Route path="/groceries/:id" element={<Show onUpdate={handleUpdate} onDelete={handleDelete} />} />
                 <Route path="groceries/:id/edit" element={<Edit />} />
             </Routes>
         </div>
-    )
-}
+  );
+};
 
 export default App;
 
